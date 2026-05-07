@@ -114,6 +114,23 @@ sw-construction-research/
 
 # Installation
 
+## Required External Tools
+
+The following tools are required but are not included in this repository:
+
+* SonarQube
+* SonarScanner
+
+Please install and configure them manually before running the analysis.
+
+SonarQube Download:
+[https://www.sonarsource.com/products/sonarqube/downloads/](https://www.sonarsource.com/products/sonarqube/downloads/)
+
+SonarScanner Download:
+[https://docs.sonarsource.com/sonarqube-server/latest/analyzing-source-code/scanners/sonarscanner/](https://docs.sonarsource.com/sonarqube-server/latest/analyzing-source-code/scanners/sonarscanner/)
+
+---
+
 ## 1. Clone the Repository
 
 ```bash
@@ -161,8 +178,53 @@ The script:
 
 ## Run SonarQube Analysis
 
+The SonarQube evaluation process was performed locally using a dedicated SonarQube server and SonarScanner.
+
+### Step 1 — Start the SonarQube Server
+
+Navigate to the SonarQube installation directory and run the startup batch file:
+
+```bash
+StartSonar.bat
+```
+
+After the server starts successfully, SonarQube becomes accessible locally through:
+
+```text
+http://localhost:9000
+```
+
+---
+
+### Step 2 — Configure SonarScanner
+
+The project uses the provided `sonar-project.properties` configuration file:
+
+```text
+sonar.projectKey=SW-Construction-Project
+sonar.projectName=SW Construction Project
+sonar.sources=dataset/refactored
+sonar.host.url=http://localhost:9000
+sonar.java.binaries=dataset/refactored
+sonar.token=${env.SONAR_TOKEN}
+```
+
+---
+
+### Step 3 — Run SonarScanner
+
+Open a terminal inside the project directory and execute:
+
 ```bash
 sonar-scanner
+```
+
+The scanner connects to the local SonarQube server, uploads the analysis results, and generates the maintainability metrics.
+
+The final reports and visualized metrics can then be accessed through the local SonarQube dashboard at:
+
+```text
+http://localhost:9000
 ```
 
 ---
