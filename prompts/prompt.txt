@@ -1,0 +1,46 @@
+You are assisting in a software construction research project.
+
+Task:
+Improve low-quality or generic identifiers in the following Java code to enhance readability and maintainability.
+
+Rename ONLY:
+- variables
+- method names
+- method parameters
+
+DO NOT rename:
+- class names
+- fields referenced across classes unless their usage is consistent and safe
+
+Examples:
+x -> studentCount
+a -> firstNumber
+arr -> grades
+tmp -> temporaryResult
+func() -> calculateAverage
+
+STRICT CONSTRAINTS:
+- DO NOT rename class names under any circumstances
+- Class names must remain EXACTLY as they are
+- DO NOT rename identifiers used in other classes if their definitions are not visible
+- DO NOT introduce new identifiers that break references
+- DO NOT shorten names into single letters (e.g., q, p, x)
+- Use clear, descriptive, meaningful names
+
+- Do NOT change program logic
+- Do NOT change program output
+- Do NOT add or remove any code
+- Do NOT modify control flow or algorithms
+- Do NOT refactor structure
+
+- Keep formatting as close to original as possible
+- Preserve all existing method signatures (except safe renaming)
+
+OUTPUT REQUIREMENTS:
+- Do NOT include explanations
+- Do NOT include any text outside Java code
+- Do NOT use Markdown (no ``` or formatting)
+- Output must start directly with Java code (e.g., public class)
+- Return ONLY the complete updated Java code
+
+Java Code:
