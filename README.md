@@ -211,9 +211,9 @@ sonar.token=${env.SONAR_TOKEN}
 
 ---
 
-### Step 3 — Run SonarScanner
+### Step 3 — Run the SonarScanner CLI
 
-Open a terminal inside the project directory and execute:
+After configuring SonarScanner and verifying the local SonarQube server connection, execute the scanner from the project directory:
 
 ```bash
 sonar-scanner
